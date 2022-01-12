@@ -14,9 +14,9 @@ jobs:
         node-version: '14.x'
     - name: Is the destiny a choice?
       run: node imitation.js > README.md
-      
-    - uses: stefanzweifel/git-auto-commit-action@v4
-      if: steps.auto-commit-action.outputs.changes_detected == 'true'
-      with:
-        commit_message: Choice has been made.
-      
+    - name: Commit change & Push
+      run: |
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -am "Choice has been made."
+            git push
