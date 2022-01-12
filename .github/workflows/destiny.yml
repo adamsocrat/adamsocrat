@@ -1,0 +1,23 @@
+name: Destiny
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
+    - name: Is the destiny a choice?
+      run: node imitation.js > README.md
+    - name: Commit change & Push
+      run: |
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -am "bot: Choice has been made."
+            git push
