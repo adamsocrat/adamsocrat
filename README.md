@@ -1,6 +1,6 @@
-> There is a cat in the box
 
+        > There is a cat in the box
 <details>
   <summary>Box</summary>
-  <pre>😸</pre>
+  <pre> </pre>
 </details>
