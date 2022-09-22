@@ -12,7 +12,7 @@ switch (Math.random() < 0.5) {
 > There is a cat in the box
 <details>
   <summary>Box</summary>
-  <pre> </pre>
+  <pre>☠️</pre>
 </details>`)
         break;
 }
