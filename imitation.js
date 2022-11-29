@@ -25,7 +25,9 @@ async function isItAlive() {
         if (result) {
                 if (result["success"] == true) {
                         const data = result["data"][0];
-                        if (data % 2 == 0) {
+                        console.log(data);
+                        console.log(data[0]);
+                        if (parseInt(data[0]) % 2 == 0) {
                                 return true
                         }
                         else {
