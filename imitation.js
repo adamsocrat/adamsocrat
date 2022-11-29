@@ -24,33 +24,25 @@ async function isItAlive() {
         const result = JSON.parse(await response);
         if (result) {
                 if (result["success"] == true) {
-                        const data = result["data"][0];
-                        if (data % 2 == 0) {
-                                return true
-                        }
-                        else {
-                                return false
-                        }
-                }
-        }
-}
-
-
-switch (isItAlive()) {
-        case true:
-                console.log(`
+                        const theNumber = result["data"];
+                        if (theNumber % 2 == 0) {
+                                console.log(`
 > There is a cat in the box
 <details>
   <summary>Box</summary>
   <pre>🐱‍💻</pre>
 </details>`)
-                break;
-        case false:
-                console.log(`
+                        }
+                        else {
+                                console.log(`
 > There is a cat in the box
 <details>
   <summary>Box</summary>
   <pre>☠️</pre>
 </details>`)
-                break;
+                        }
+                }
+        }
 }
+
+isItAlive();
