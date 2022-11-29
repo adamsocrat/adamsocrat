@@ -26,11 +26,9 @@ async function isItAlive() {
                 if (result["success"] == true) {
                         const data = result["data"][0];
                         if (data % 2 == 0) {
-                                console.log("It's alive!");
                                 return true
                         }
                         else {
-                                console.log("It's dead :\(");
                                 return false
                         }
                 }
