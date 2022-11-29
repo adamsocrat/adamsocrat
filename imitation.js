@@ -21,23 +21,21 @@ function getUrl(url) {
 
 async function isItAlive() {
         const response = await getUrl(qrng);
-        const result = JSON.stringify(await response);
+        const result = JSON.parse(await response);
         if (result) {
                 if (result["success"] == true) {
                         const data = result["data"][0];
-                        console.log(data);
-                        console.log(data[0]);
-                        if (parseInt(data[0]) % 2 == 0) {
+                        if (data % 2 == 0) {
+                                console.log("It's alive!");
                                 return true
                         }
                         else {
+                                console.log("It's dead :\(");
                                 return false
                         }
                 }
         }
 }
-
-
 
 
 switch (isItAlive()) {
