@@ -13,7 +13,9 @@ jobs:
       with:
         node-version: '14.x'
     - name: Is the destiny a choice?
-      run: node imitation.js > README.md
+      run: |
+            npm install xhr2
+            node imitation.js > README.md
     - name: Commit change & Push
       run: |
             git config user.name 'github-actions[bot]'
