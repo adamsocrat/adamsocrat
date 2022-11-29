@@ -21,7 +21,7 @@ function getUrl(url) {
 
 async function isItAlive() {
         const response = await getUrl(qrng);
-        const result = JSON.stringify(await response.json());
+        const result = JSON.stringify(await response);
         if (result) {
                 if (result["success"] == true) {
                         const data = result["data"][0];
