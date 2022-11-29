@@ -1,17 +1,4 @@
-
 const qrng = 'https://qrng.anu.edu.au/API/jsonI.php?length=1&type=uint8';
-
-
-
-async function gatherResponse(response) {
-        const { headers } = response;
-        const contentType = headers.get('content-type') || '';
-        if (contentType.includes('application/json')) {
-                return JSON.stringify(await response.json());
-        }
-        return response.text();
-}
-
 
 function getUrl(url) {
         return new Promise(function (resolve, reject) {
@@ -31,10 +18,10 @@ function getUrl(url) {
                 request.send();
         });
 }
+
 async function isItAlive() {
-        
         const response = await getUrl(qrng);
-        const result = await gatherResponse(response);
+        const result = JSON.stringify(await response.json());
         if (result) {
                 if (result["success"] == true) {
                         const data = result["data"][0];
