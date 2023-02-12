@@ -27,18 +27,18 @@ async function isItAlive() {
                         const theNumber = result["data"];
                         if (theNumber % 2 == 0) {
                                 console.log(`
-> There is a cat in the box
+> There is a balloon and a needle in the box
 <details>
   <summary>Box</summary>
-  <pre>🐱‍💻</pre>
+  <pre>🪡❓</pre>
 </details>`)
                         }
                         else {
                                 console.log(`
-> There is a cat in the box
+> There is a balloon and a needle in the box
 <details>
   <summary>Box</summary>
-  <pre>☠️</pre>
+  <pre>🪡🎈</pre>
 </details>`)
                         }
                 }
